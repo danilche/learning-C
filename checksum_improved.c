@@ -57,7 +57,6 @@ long divide_by_hundred(long number)
 	long new_number;
 	new_number = number / 100;
 	return new_number;
-
 }
 
 int get_digit(long number)

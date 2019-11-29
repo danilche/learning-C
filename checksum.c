@@ -20,7 +20,7 @@ int main(void)
 {
 	//get input//
 
-	long entry = 4012888888881881;
+	long entry = 5506920809243667;
 
 	//variables to help extracting first digit or first two digits for CC type check//
 
@@ -56,11 +56,7 @@ int main(void)
 
 	//check if card is MC//
 
-	else if    (mc_x == 51
-			 || mc_x == 52
-			 || mc_x == 53
-			 || mc_x == 54
-			 || mc_x == 55)
+	else if    (mc_x >= 51 || mc_x <= 55)
 	{
 		int get_first = get_first_sum(entry);
 		int get_second = get_second_sum(entry);

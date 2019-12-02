@@ -1,16 +1,20 @@
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 
 int main()
 {
-	long entry = 4012888888881881;
+	char f_entry[17];
+	printf("Enter CC number:\n");
+	fgets(f_entry, 17, stdin);
+	long entry = atol(f_entry);
 	long odd_rest, even_rest;
 	int odd_digit, odd_total;
 	int even_digit, even_total;
 
-	//first odd digit has to be extracted outside of the loop because// 
-	//entry is divided by 10 - in all other cases it's with 100//
+	/*first odd digit has to be extracted outside of the loop because
+	entry is divided by 10 - in all other cases it's with 100*/
 
 	odd_rest = entry / 10;
 	odd_digit = odd_rest % 10;
@@ -25,11 +29,11 @@ int main()
 
 	for (int i = 0; i <= 7; i++)
 	{
-	//digits are being extracted 7 times which is maximal number of //
-	//loops needed for a 16-digit number. In case when number of digits//
-	//is lower a zero will be extracted which does not change the calculation//
+	/*digits are being extracted 7 times which is maximal number of
+	loops needed for a 16-digit number. In case when number of digits
+	is lower a zero will be extracted which does not change the calculation*/
 
-		//getting odd digits, and applying Luhn's algorithm//
+		/*getting odd digits, and applying Luhn's algorithm*/
 
 		odd_rest /= 100;
 		odd_digit = odd_rest % 10;
@@ -40,7 +44,7 @@ int main()
 		}
 		odd_total += odd_digit;
 
-		//getting even digits, and applying Luhn's algorithm//
+		/*getting even digits, and applying Luhn's algorithm*/
 
 		even_rest /= 100;
 	    even_digit = even_rest % 10;
@@ -52,8 +56,8 @@ int main()
 		}
 	else
 	{
-		//these variables will be used to check whether CC is of//
-		//a certain type or invalid//
+		/*these variables will be used to check whether CC is of a certain type or invalid*/
+
 		int amex, mc, visa1, visa2;
 		amex = entry / pow(10, 13);
 		mc = entry / pow(10, 14);

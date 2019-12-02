@@ -4,7 +4,7 @@
 
 int main()
 {
-	long entry = 5506920809243667;
+	long entry = 4012888888881881;
 	long odd_rest, even_rest;
 	int odd_digit, odd_total;
 	int even_digit, even_total;
@@ -51,29 +51,24 @@ int main()
 			printf("INVALID\n");
 		}
 	else
-		//declaring some variables to check whether CC is of a certain//
-		//type or invalid//
 	{
-		double amex, mc, visa1, visa2;
-		int amex_x, mc_x, visa1_x, visa2_x;
-		amex = pow(10, 13);
-		mc = pow(10, 14);
-		visa1 = pow(10, 12);
-		visa2 = pow(10, 15);
-		amex_x = entry / amex;
-		mc_x = entry / mc;
-		visa1_x = entry / visa1;
-		visa2_x = entry / visa2;
+		//these variables will be used to check whether CC is of//
+		//a certain type or invalid//
+		int amex, mc, visa1, visa2;
+		amex = entry / pow(10, 13);
+		mc = entry / pow(10, 14);
+		visa1 = entry / pow(10, 12);
+		visa2 = entry / pow(10, 15);
 		
-		if (amex_x == 34 || amex_x == 37)
+		if (amex == 34 || amex == 37)
 		{
 			printf("AMEX\n");
 		}
-		else if (mc_x >= 51 || mc_x <= 55)
+		else if (mc >= 51 && mc <= 55)
 		{
 			printf("MASTERCARD\n");
 		}
-		else if (visa1_x == 4 || visa2_x == 4)	
+		else if (visa1 == 4 || visa2 == 4)	
 		{
 			printf("VISA\n");
 		}

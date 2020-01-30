@@ -37,7 +37,7 @@ int check_letters(string text)
 	int letters = 0;
     for (int i = 0; i < strlen(text); i++)
     {
-        if ((text[i] >= 60 && text[i] <= 90)
+        if ((text[i] >= 65 && text[i] <= 90)
              || (text[i] >= 97 && text[i] <= 122))
         {
             letters++;
